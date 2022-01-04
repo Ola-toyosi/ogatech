@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Verdana&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static '/css/ogatech_style.css' %}?{% now 'U' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static '/css/bootstrap.min.css' %}?{% now 'U' %}"
+    />
+    <script src="{% static '/js/ogatech_js.js' %}?{% now 'U' %}"></script>
+    <style></style>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-dark nav_background_color navbar-static-top">
+        <!-- <div class="container"> -->
+        <ul class="nav nav-tabs">
+          <li>
+            <a class="navbar-brand" href="{% url 'index'%}"
+              ><span class="nav_text_color">OGATECH</span></a
+            >
+          </li>
+          <li class="nav-item justify-content-center">
+            <a class="nav-link" class="nav_text_span" href="##"
+              ><span class="nav_text_color">How it works</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" class="nav_text_span" href="#"
+              ><span class="nav_text_color">Pricing</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" class="nav_text_span" href="#"
+              ><span class="nav_text_color">About Us</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" class="nav_text_span" href="#"
+              ><span class="nav_text_color">Contact Us</span></a
+            >
+          </li>
+        </ul>
+        <div class="ml-auto">
+          <a href="{% url 'ogatech_app:register' %}">
+            <button type="button" class="btn btn-primary">Sign Up</button></a
+          >
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}"
+            ><button type="button" class="btn btn-light">
+              <span class="login_decor">Logout</span>
+            </button>
+          </a>
+          {% else %}
+          <a href="{% url 'ogatech_app:user_login' %}"
+            ><button type="button" class="btn btn-light">
+              <span class="login_decor">Login</span>
+            </button>
+          </a>
+          {% endif %}
+        </div>
+        <!-- </div> -->
+      </nav>
+    </div>
+
+    <div class="container">{% block body_block %} {% endblock %}</div>
+
+    <footer class="stela-footer" data-v-4329f34b>
+      <div class="main" data-v-4329f34b>
+        <div class="container" data-v-4329f34b>
+          <div class="info-quick-links" data-v-4329f34b>
+            <div class="info" data-v-4329f34b>
+              <a href="/" class="nuxt-link-active" data-v-4329f34b
+                ><img
+                  src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/logomark-primary.svg"
+                  alt="Heroshe Logo"
+                  class="info__logo"
+                  data-v-4329f34b
+              /></a>
+              <div class="scale-on-xxxl origin-top-left" data-v-4329f34b>
+                <p class="info__detail max-w-xs" data-v-4329f34b>
+                  Experience timely, affordable and hassle free shipping from
+                  the US
+                </p>
+              </div>
+            </div>
+            <div class="quick-links for-mobile" data-v-4329f34b>
+              <div class="quick-link solutions" data-v-4329f34b>
+                <p class="quick-link__group-header" data-v-4329f34b>
+                  <span data-v-4329f34b>Solutions</span>
+                  <img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/icon-dropdown.svg"
+                    alt="open solutions menu dropdown icon"
+                    data-v-4329f34b
+                  />
+                </p>
+              </div>
+              <div class="quick-link solutions" data-v-4329f34b>
+                <p class="quick-link__group-header" data-v-4329f34b>
+                  <span data-v-4329f34b>Resources</span>
+                  <img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/icon-dropdown.svg"
+                    alt="open solutions menu dropdown icon"
+                    data-v-4329f34b
+                  />
+                </p>
+              </div>
+              <div class="quick-link solutions" data-v-4329f34b>
+                <p class="quick-link__group-header" data-v-4329f34b>
+                  <span data-v-4329f34b>Company</span>
+                  <img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/icon-dropdown.svg"
+                    alt="open solutions menu dropdown icon"
+                    data-v-4329f34b
+                  />
+                </p>
+              </div>
+            </div>
+            <div class="quick-links for-desktop" data-v-4329f34b>
+              <div class="quick-link solutions" data-v-4329f34b>
+                <p class="quick-link__group-header" data-v-4329f34b>
+                  <span data-v-4329f34b>Solutions</span>
+                </p>
+                <ul class="quick-link__group-links" data-v-4329f34b>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a href="/solutions/personal-shipping" data-v-4329f34b>
+                      Personal
+                    </a>
+                  </li>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a href="/solutions/business" data-v-4329f34b> Business </a>
+                  </li>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a href="/solutions/drop-shipping" data-v-4329f34b>
+                      Drop Shipping
+                    </a>
+                  </li>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a href="/solutions/education" data-v-4329f34b>
+                      Education
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="quick-link solutions" data-v-4329f34b>
+                <p class="quick-link__group-header" data-v-4329f34b>
+                  <span data-v-4329f34b>Resources</span>
+                </p>
+                <ul class="quick-link__group-links" data-v-4329f34b>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a href="/help-center" data-v-4329f34b> Help Center </a>
+                  </li>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a
+                      href="https://blog.heroshe.com"
+                      target="_blank"
+                      data-v-4329f34b
+                    >
+                      Blog
+                    </a>
+                  </li>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a
+                      href="/pricing"
+                      aria-current="page"
+                      class="active nuxt-link-active"
+                      data-v-4329f34b
+                    >
+                      Pricing
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="quick-link solutions" data-v-4329f34b>
+                <p class="quick-link__group-header" data-v-4329f34b>
+                  <span data-v-4329f34b>Company</span>
+                </p>
+                <ul class="quick-link__group-links" data-v-4329f34b>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a href="/about" data-v-4329f34b> About Us </a>
+                  </li>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a href="/contact" data-v-4329f34b> Contact Us </a>
+                  </li>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a
+                      href="https://heroshe-public-assets.s3.eu-west-2.amazonaws.com/media-kit.zip"
+                      target="_blank"
+                      data-v-4329f34b
+                    >
+                      Press Kit
+                    </a>
+                  </li>
+                  <li class="quick-link__group-link" data-v-4329f34b>
+                    <a href="/legal" data-v-4329f34b> Legal </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="socials-with-currency-chooser for-mobile" data-v-4329f34b>
+            <p class="choose-currency" data-v-4329f34b>
+              <label for="mobile-currency" class="block" data-v-4329f34b
+                >Choose a currency:</label
+              >
+              <span class="select-wrapper" data-v-4329f34b
+                ><select
+                  id="mobile-currency"
+                  name="mobile-currency"
+                  data-v-4329f34b
+                >
+                  <option value="USD" data-v-4329f34b>USD</option>
+                  <option value="NGN" data-v-4329f34b>NGN</option>
+                </select>
+                <img
+                  src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/ic-arrow-drop-down.svg"
+                  alt="..."
+                  data-v-4329f34b
+              /></span>
+            </p>
+            <ul class="social-links" data-v-4329f34b>
+              <li data-v-4329f34b>
+                <a href="https://linkedin.com/company/heroshe" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/linkedin.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+              <li data-v-4329f34b>
+                <a href="https://facebook.com/shopheroshe" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/facebook.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+              <li data-v-4329f34b>
+                <a href="https://twitter.com/shipheroshe" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/twitter.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+              <li data-v-4329f34b>
+                <a href="https://youtube.com/user/HerosheTV" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/youtube.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+              <li data-v-4329f34b>
+                <a href="https://instagram.com/shipheroshe" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/instagram.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+            </ul>
+            <p class="service-terms-and-policy" data-v-4329f34b>
+              <span data-v-4329f34b
+                ><a
+                  href="/legal/terms"
+                  class="hover:opacity-75"
+                  data-v-4329f34b
+                >
+                  Terms of Service
+                </a></span
+              ><span data-v-4329f34b
+                ><a
+                  href="/legal/privacy-policy"
+                  class="hover:opacity-75"
+                  data-v-4329f34b
+                >
+                  Privacy Policy
+                </a></span
+              >
+            </p>
+          </div>
+          <div
+            class="socials-with-currency-chooser for-desktop"
+            data-v-4329f34b
+          >
+            <ul class="social-links" data-v-4329f34b>
+              <li data-v-4329f34b>
+                <a href="https://linkedin.com/company/heroshe" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/linkedin.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+              <li data-v-4329f34b>
+                <a href="https://facebook.com/shopheroshe" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/facebook.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+              <li data-v-4329f34b>
+                <a href="https://twitter.com/shipheroshe" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/twitter.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+              <li data-v-4329f34b>
+                <a href="https://youtube.com/user/HerosheTV" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/youtube.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+              <li data-v-4329f34b>
+                <a href="https://instagram.com/shipheroshe" data-v-4329f34b
+                  ><img
+                    src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/socials/instagram.svg"
+                    data-v-4329f34b
+                /></a>
+              </li>
+            </ul>
+            <p class="choose-currency" data-v-4329f34b>
+              <label for="currency" data-v-4329f34b>Choose a currency:</label>
+              <span class="select-wrapper" data-v-4329f34b
+                ><select id="currency" name="currency" data-v-4329f34b>
+                  <option value="USD" data-v-4329f34b>USD</option>
+                  <option value="NGN" data-v-4329f34b>NGN</option>
+                </select>
+                <img
+                  src="https://d2ea1wukp3s3qg.cloudfront.net/production/static/svg/ic-arrow-drop-down.svg"
+                  alt="..."
+                  data-v-4329f34b
+              /></span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-wrapper" data-v-4329f34b>
+        <div class="container" data-v-4329f34b>
+          <div
+            class="
+              w-full
+              flex
+              justify-between
+              items-center
+              lg:justify-between lg:py-4
+            "
+            data-v-4329f34b
+          >
+            <p
+              class="copyright flex-grow text-center lg:text-left"
+              data-v-4329f34b
+            >
+              © 2021 Heroshe ‐ All rights reserved
+            </p>
+            <p class="privacy-terms-links hidden lg:flex gap-6" data-v-4329f34b>
+              <span data-v-4329f34b
+                ><a
+                  href="/legal/terms"
+                  class="hover:opacity-75"
+                  data-v-4329f34b
+                >
+                  Terms of Service
+                </a></span
+              ><span data-v-4329f34b
+                ><a
+                  href="/legal/privacy-policy"
+                  class="hover:opacity-75"
+                  data-v-4329f34b
+                >
+                  Privacy Policy
+                </a></span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

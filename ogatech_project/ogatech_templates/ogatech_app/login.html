@@ -1,0 +1,40 @@
+{% extends 'ogatech_app/base.html' %} {% block body_block %}
+
+<div class="login">
+  <h1>Login</h1>
+  <section class="login-wrapper">
+    <form action="{% url 'ogatech_app:user_login' %}" method="post">
+      {% csrf_token %}
+      <label for="username">Username:</label>
+      <input
+        required
+        type="text"
+        name="username"
+        placeholder="Enter Username"
+        autocapitalize="off"
+        autocorrect="off"
+      />
+
+      <label for="password">Password</label>
+      <input class="password" required name="login[password]" type="password" />
+      <div class="hide-show">
+        <span>Show</span>
+      </div>
+
+      <p class="remember_me">
+        <label>
+          <input type="checkbox" name="remember_me" id="remember_me" />
+          Remember me on this computer
+        </label>
+      </p>
+
+      <input type="submit" name="" value="Login" />
+    </form>
+  </section>
+</div>
+
+<div class="login-help">
+  <p>Forgot your password? <a href="#">Click here to reset it</a>.</p>
+</div>
+
+{% endblock %}
